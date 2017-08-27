@@ -188,13 +188,14 @@ public class answerExamples {
     }
 
     //Solution 2 - Without sorting O(n).
+    //Note: Assume arr contains value 0 in it.
     public static int findDup2(int [] arr){
         for(int n : arr){
             int t = n<0 ? n*-1 : n;//if negative turn to positive
             arr[t] *= -1;
         }
-        for(int n : arr){
-            if(n > 0)return n;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) return i;
         }
         return 0;
     }
